@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSM</title>
+    <link rel="stylesheet" href="css/details.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src='js/common.js'></script>
+</head>
+<body onload="init();">
+    <header id="header">
+        <div class="headerwrap" class="clear">
+            <h1 class="logo"><a href="index.html">JSM</a></h1>
+            <p class="menuBtn">menu</p>
+            <p class="login_bt"><a href="login.html">login</a></p>
+            <nav class="nav">
+                <div class="gnb">
+                    <ul class="clear">
+                        <li>BRAND <span>+</span>
+                            <div class="sub_menu">
+                                <ul >
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="store.html">store</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>JUNSAEMMOOL<span>+</span>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="new_arrival.html">new_arrival</a></li>
+                                    <li><a href="p_base.html">base</a></li>
+                                    <li><a href="p_lip.html">lip</a></li>
+                                    <li><a href="p_eye.html">eye</a></li>
+                                    <li><a href="p_skincare.html">skincare</a></li>
+                                    <li><a href="p_tool.html">tool&acc</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>LOUNGE<span>+</span>
+                            <div class="sub_menu">
+                                <ul class="sub_menu">
+                                    <li><a href="event.html">진행중인 이벤트</a></li>
+                                    <li><a href="#.html">membership</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>COMMUNITY<span>+</span>
+                            <div class="sub_menu">
+                                <ul class="sub_menu">
+                                    <li><a href="faq.html">faq</a></li>
+                                    <li><a href="notice.html">notice</a></li>
+                                    <li><a href="login.html">1:1 q&a</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="jsm_copy">Copyright 2021 김이박team. All right reserved.</p>
+                </div>
+            </nav><!-- 토글 메뉴 END-->
+        </div><!-- headerwrap END-->
+    </header><!-- header END *수정금지-경은*-->
+    <div id="cont_prod">
+        <div class="prod_top">
+            <h1 class="prod_tit">NEW ARRIVAL</h1>
+            <span class="back_btn"><a href="javascript:history.back()"><img src="img/back_btn.png" alt="뒤로이동"></a></span>
+        </div>
+        <div class="goods_sum">
+            <img src="img/n1.png" alt="sum">
+        </div>
+        <p class="goods_tit">JUNGSAEMMOOL BeginS Kombutox Skin Toner</p>
+        <p class="goods_text">스킨케어의 시작!</p>
+        <p class="goods_price"><label for="su1">25,000won</label></p>
+        <div style="border-bottom: 1px dashed #5b5b5b;margin:15px 0;"></div>
+        <form action="#" method="GET" name="form" class="goods">
+            <fieldset>
+                <legend class="blind">구매양식</legend>
+                <table>
+                    <caption>상품선택</caption>
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td><label for="su2">색상</label></td>
+                            <td>
+                                <div class="color_box">
+                                    <select name="Color" id="color">
+                                    <option value="">▼ 색상을 선택해주세요</option>
+                                    <option value="toner">토너</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="su2">수량</label></td>
+                            <td class="goods_amt">
+                                <input type=hidden name="sell_price" value="25000">
+                                
+                                <div class="goods_su">
+                                    <input class="mins_btn" type="button" value=" - " onclick="del();">
+                                    <input class="su" type="text" name="amount" value="1" onchange="change();">
+                                    <input class="plus_btn" type="button" value=" + " onclick="add();">
+                                </div>
+                            </td>
+                        </tr>              
+                        <tr>
+                            <td>TOTAL</td>
+                            <td class="total"><input type="text" name="sum" readonly>won</td>
+                        </tr>
+                    </tbody>
+                </table>  
+            </fieldset>
+        </form>
+        <div id="btn">
+            <input class="goodsOk_btn" type="button" id="basket" onclick="shopGo()" value="구매하기"/>
+            <input class="basket_btn" type="button"  onclick="basketGo()" value="장바구니" >
+            <div class="like_btn">
+                <img id="like" src="img/like_off.jpg" alt="관심없어요"/>
+            </div>
+        </div>
+        <script>
+            function shopGo(){
+                var orderYes = confirm("현재 상품을 구매하시겠어요?");
+                if(orderYes){
+                    location.href="login.html"
+                }else{
+                    location.href="#"
+                }
+            }
+            function basketGo(){
+                var goodscheck = confirm("장바구니에 담은 상품을 확인하시겠습니까?");
+                if(goodscheck){
+                    location.href="basket.html"
+                }else{
+                    location.href="#"
+                }
+            }
+            $(function() {
+                $('#like').css('cursor','pointer').on({'click':function() {
+                let src = ($(this).attr('src') === 'img/like_off.jpg') ?
+                  'img/like_on.jpg':
+                  'img/like_off.jpg';
+                $(this).attr('src', src);
+                    }
+                });
+            });
+
+            var sell_price;
+            var amount;
+            
+            function init () {
+                sell_price = document.form.sell_price.value;
+                amount = document.form.amount.value;
+                document.form.sum.value = sell_price;
+                change();
+            }
+            
+            function add () {
+                hm = document.form.amount;
+                sum = document.form.sum;
+                hm.value ++ ;
+            
+                sum.value = parseInt(hm.value) * sell_price;
+            }
+            
+            function del () {
+                hm = document.form.amount;
+                sum = document.form.sum;
+                    if (hm.value > 1) {
+                        hm.value -- ;
+                        sum.value = parseInt(hm.value) * sell_price;
+                    }
+            }
+            
+            function change () {
+                hm = document.form.amount;
+                sum = document.form.sum;
+            
+                    if (hm.value < 0) {
+                        hm.value = 0;
+                    }
+                sum.value = parseInt(hm.value) * sell_price;
+            }
+        </script>
+        <div class="prod">
+            <img src="img/prod_ad.jpg" alt="광고배너이미지">
+            <br/><br/>
+            <img src="http://jsmbeauty.img18.kr/product/begins/brand_intro/m/begins_brand_intro_m_02.jpg" alt="상세1">
+            <img src="http://jsmbeauty.img18.kr/product/begins/brand_intro/m/begins_brand_intro_m_03.jpg" alt="상세2">
+            <img src="http://jsmbeauty.img18.kr/product/begins/brand_intro/m/begins_brand_intro_m_04.jpg" alt="상세3">
+            <img src="http://jsmbeauty.img18.kr/product/begins/brand_intro/m/begins_brand_intro_m_05.jpg" alt="상세4">
+            <img src="http://jsmbeauty.img18.kr/product/begins/brand_intro/m/begins_brand_intro_m_08.jpg" alt="상세5">
+        </div>
+        <div class="prod_noti">
+            <dl>
+                <dt><p>제품상세정보</p><span><img src="img/moer_btn.png" alt="상세보기"></span></dt>
+                    <dd>
+                        정제수, 옥틸도데칸올, 다이페닐다이메티콘, 다이페닐실록시페닐트라이메티콘, 폴리글리세릴-2다이폴리하이드록시스테아레이트, 에탄올,
+                        에틸셀룰로오스, 소듐스테아로일글루타메이트, 베헤닐알코올, 동백나무씨오일, 로즈힙열매오일, 다마스크장미꽃오일, 폴리아크릴레이트-13, 펜틸렌글라이콜, 폴리솔베이트20, 세테아릴알코올, 티타늄디옥사이드, 폴리아이소부텐, 스테비오사이드, 시트릭애씨드, 에틸헥실글리세린, 솔비탄아이소스테아레이트, 알루미늄하이드록사이드, 암모늄폴리아크릴레이트, 소듐시트레이트,
+                        카프릴릭/카프릭트라이글리세라이드, 부틸렌글라이콜, 토코페롤, 향료, 페녹시에탄올, 데하이드로아세틱애씨드, 황색4호, 적색227호, 적색104호의(1)
+                    </dd>
+                <dt><p>상품리뷰 (0)</p><span><img src="img/moer_btn.png" alt="상세보기"></span></dt>
+                    <dd>
+                        고객님의 첫 리뷰를 기다리고 있어요!
+                    </dd>
+                <dt><P>배송/교환/반품/환불안내</p><span><img src="img/moer_btn.png" alt="상세보기"></span></dt>
+                    <dd>
+                        -교환, 반품은 제품 수령후 7일 이내 가능합니다<br/>
+                        -상품에 문제가 있을 경우 내용을 확인한 날로부터 30일 이내에 교환 및 환불이 가능합니다<br/>
+                        -교환,반팜 환불은 상품 도착 후 상품 상태 점검 후 이루어집니다<br/>
+                        -피부 트러블 등으로 인한 교환 반품은 1:1 문의 게시판에 접수하시면 절차 안내 드립니다<br/>
+                        -소비자의 귀책 사유에 의한 상품 훼손, 사용에 의해 상품가치가 현저히 감소된 경우 교환/반품이 불가능한 점 양해 부탁드립니다
+                    </dd>
+            </dl>
+        </div> 
+    </div>
+        <script>
+        $('#cont_prod .prod_noti dt').click(function(){
+            $(this).next().toggleClass('on');
+            $(this).next().siblings('dd').removeClass('on');
+        });
+    </script>
+    <!--footer 시작 *수정금지-경은* -->
+    <footer id="footer">
+        <dl>
+            <dt><p class="company_tit">(주)정샘물뷰티 사업자정보</p><span class="more_btn"><img src="img/moer_btn.png" alt="상세보기"></span></dt>
+                <dd>
+                    <p class="adress">
+                        서울시 강남구 압구정로 72길 8 백원빌딩 3층<br/>
+                        대표자 유민석  |  개인정보보호최고책임자 유민석<br/>
+                        사업자등록번호 261-81-20935<br/>
+                        사업자신고 2015-서울강남02896
+                    </p>
+                    <p class="connect">
+                        TEL 080-816-7671<br/>
+                        E-mail jsmbeauty@jsmbeauty.com<br/>
+                        주문 외 상담 jsmbeauty_cs@jsmbeauty.com
+                    </p>
+                    <p class="fcopy">
+                        Copyright 2021 김이박team. All right reserved.
+                    </p>
+                </dd>
+        </dl>
+        <div class="company">
+            <ul class="fmenu1">
+                <li><a href="#.html">사업자정보확인</a></li>
+                <li><a href="#.html">개인정보처리방침</a></li>
+                <li><a href="#.html">이용약관</a></li>
+                <li><a href="#.html">고객센터</a></li>
+            </ul>             
+            <ul class="fmenu2">
+                <li><a href="about.html">ABOUT JSM</a></li>
+                <li><a href="#.html">인재채용</a></li>
+            </ul>
+        </div>
+        <div class="sns">
+            <a href="#.html"><img src="img/fecebook.png" alt="페이스북"></a>
+            <a href="#.html"><img src="img/insta.png" alt="인스타"></a>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

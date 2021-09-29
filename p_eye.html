@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Product-eye</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    #container_eye {width: 100%;padding-bottom: 5%;}
+    #container_eye h1 {width: 100%;padding:70px 0 40px 0;color:#707070;
+   font-size:20px;position: relative; text-align: center;}
+   #container_eye .line {position: absolute;left:20px;right:20px;
+    top:120px;border-bottom:2px solid #b5b5b5;width:90%;}
+   #container_eye #seq {position: absolute;right:4%;top: 130px;margin-bottom:20px;margin-top: 10px;}
+   
+   #container_eye .cont_e dl {display: inline-block;width: 48%;overflow: hidden;}
+   #container_eye .cont_e dl dt {margin:20px;border-bottom:1px solid #b5b5b5;}
+   #container_eye .cont_e dl dt img {width: 100%;}
+   #container_eye .cont_e ul li {text-align: center;color:#000;font-size:12px;}
+  
+  </style>
+  <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src='js/common.js'></script>
+</head>
+<body>
+  <header id="header">
+    <div class="headerwrap" class="clear">
+        <h1 class="logo"><a href="index.html">JSM</a></h1>
+        <p class="menuBtn">menu</p>
+        <p class="login_bt"><a href="login.html">login</a></p>
+        <nav class="nav">
+            <div class="gnb">
+                <ul class="clear">
+                    <li>BRAND <span>+</span>
+                        <div class="sub_menu">
+                            <ul >
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="store.html">store</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>JUNSAEMMOOL<span>+</span>
+                        <div class="sub_menu">
+                            <ul>
+                                <li><a href="new_arrival.html">new_arrival</a></li>
+                                <li><a href="p_base.html">base</a></li>
+                                <li><a href="p_lip.html">lip</a></li>
+                                <li><a href="p_eye.html">eye</a></li>
+                                <li><a href="p_skincare.html">skincare</a></li>
+                                <li><a href="p_tool.html">tool&acc</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>LOUNGE<span>+</span>
+                        <div class="sub_menu">
+                            <ul class="sub_menu">
+                                <li><a href="event.html">진행중인 이벤트</a></li>
+                                <li><a href="#.html">membership</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>COMMUNITY<span>+</span>
+                        <div class="sub_menu">
+                            <ul class="sub_menu">
+                                <li><a href="faq.html">faq</a></li>
+                                <li><a href="notice.html">notice</a></li>
+                                <li><a href="login.html">1:1 q&a</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <p class="jsm_copy">Copyright 2021 김이박team. All right reserved.</p>
+            </div>
+        </nav><!-- 토글 메뉴 END-->
+    </div><!-- headerwrap END-->
+</header><!-- header END *수정금지-경은*-->
+  <section id="container_eye">
+    <h1>EYE</h1>
+    <p class="line"></p>
+    <select name="sequence" id="seq">
+      <option value="--">정렬방식</option>
+      <option value="">최신순</option>
+      <option value="">가격 낮은순</option>
+      <option value="">가격 높은순</option>
+    </select>
+    <div class="cont_e">
+      <dl>
+        <dt>
+          <a href="eye_dp.html">
+            <img src="img/e1.png" alt="e1">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Colorpiece Eyeshadow Prism</span></li>
+            <li><span class=""></span>22,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e2.png" alt="e2">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Colorpiece Eyeshadow Nude</span></li>
+            <li><span class=""></span>22,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e3.png" alt="e3">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Refining Eyeshadow Double</span></li>
+            <li><span class=""></span>32,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e4.png" alt="e4">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Refining Color-bony Brow</span></li>
+            <li><span class=""></span>18,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e5.png" alt="e5">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Refining Edge Eye Pencil</span></li>
+            <li><span class=""></span>18,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e6.png" alt="e6">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Artist Kohl Pen Liner</span></li>
+            <li><span class=""></span>24,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e7.png" alt="e7">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Style Up Lash Mascara</span></li>
+            <li><span class=""></span>25,000원</li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>
+          <a href="#">
+            <img src="img/e8.png" alt="e8">
+          </a>
+        </dt>
+        <dd>
+          <ul>
+            <li><span class="">Style Fix Brow Mascara</span></li>
+            <li><span class=""></span>20,000원</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </section>
+    <!--footer 시작 *수정금지-경은* -->
+    <footer id="footer">
+      <dl>
+          <dt><p class="company_tit">(주)정샘물뷰티 사업자정보</p><span class="more_btn"><img src="img/moer_btn.png" alt="상세보기"></span></dt>
+              <dd>
+                  <p class="adress">
+                      서울시 강남구 압구정로 72길 8 백원빌딩 3층<br/>
+                      대표자 유민석  |  개인정보보호최고책임자 유민석<br/>
+                      사업자등록번호 261-81-20935<br/>
+                      사업자신고 2015-서울강남02896
+                  </p>
+                  <p class="connect">
+                      TEL 080-816-7671<br/>
+                      E-mail jsmbeauty@jsmbeauty.com<br/>
+                      주문 외 상담 jsmbeauty_cs@jsmbeauty.com
+                  </p>
+                  <p class="fcopy">
+                      Copyright 2021 김이박team. All right reserved.
+                  </p>
+              </dd>
+      </dl>
+      <div class="company">
+          <ul class="fmenu1">
+              <li><a href="#.html">사업자정보확인</a></li>
+              <li><a href="#.html">개인정보처리방침</a></li>
+              <li><a href="#.html">이용약관</a></li>
+              <li><a href="#.html">고객센터</a></li>
+          </ul>             
+          <ul class="fmenu2">
+              <li><a href="about.html">ABOUT JSM</a></li>
+              <li><a href="#.html">인재채용</a></li>
+          </ul>
+      </div>
+      <div class="sns">
+          <a href="#.html"><img src="img/fecebook.png" alt="페이스북"></a>
+          <a href="#.html"><img src="img/insta.png" alt="인스타"></a>
+          </ul>
+      </div>
+  </footer>
+</body>
+</html>
